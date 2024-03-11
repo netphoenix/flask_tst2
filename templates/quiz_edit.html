@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block main_menu %}
+    {{ super() }}
+    {% include 'quiz_menu.html' %}
+{% endblock main_menu %}
+
+{% block content1 %}
+<div class="start_form quiz_form">
+    <form action="{{ url_for('quiz_edit', id=q.id) }}" method="post">
+        <div class="form1">
+            <fieldset>
+                <legend>Измените название</legend>
+        
+                <div class="input-block">
+                    <label for="field1">Ответ:</label>
+                    <input type="text" id="field1" name="name" value="{{ q.name }}"">
+                </div>
+
+                <div class="button-container">
+                    <input class="button_qv3" type="submit" value ='Сохранить'>
+                    <a href="{{ url_for('view_quiz_edit') }}" class="button_qv3">Отмена</a>
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</div>
+{% endblock content1 %}

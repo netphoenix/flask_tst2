@@ -1,0 +1,74 @@
+<style>
+.start_form.quiz_form {
+    text-align: center; /* Центрируем содержимое формы */
+}
+
+.input-block {
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: 10px;
+}
+
+.input-block label {
+    display: block;
+    margin-bottom: 0px;
+}
+
+.input-block input[type="text"],
+.input-block textarea {
+    width: 100%; /* Устанавливаем ширину поля ввода на 100% */
+    /* padding: 8px; */
+    border: 1px solid #ccc;
+    /* border-radius: 4px; */
+    /* box-sizing: border-box; */
+}
+
+.button-container {
+    margin-top: 0px;
+}
+</style>
+
+{% extends "base.html" %}
+
+{% block main_menu %}
+    {{ super() }}
+    {% include 'quiz_menu.html' %}
+{% endblock main_menu %}
+
+{% block content2 %}
+<div class="start_form quiz_form">
+    <form action="{{ url_for('question_edit', id=q.id) }}" method="post">
+        <div class="form1">
+            <fieldset>
+                <legend>Измените данные</legend>
+        
+                <div class="input-block">
+                    <label for="field1">Вопрос:</label>
+                    <textarea rows="2" id="field1" cols="45" name="question">{{ q.question }}</textarea>
+                </div>
+                <div class="input-block">
+                    <label for="field2">Ответ:</label>
+                    <input type="text" id="field2" name="answer" value="{{ q.answer }}"">
+                </div>
+                <div class="input-block">
+                    <label for="field3">Вариант 1:</label>
+                    <input type="text" id="field3" name="wrong1" value="{{ q.wrong1 }}">
+                </div>
+                <div class="input-block">
+                    <label for="field4">Вариант 1:</label>
+                    <input type="text" id="field4" name="wrong2" value="{{ q.wrong1 }}">
+                </div>
+                <div class="input-block">
+                    <label for="field5">Вариант 3:</label>
+                    <input type="text" id="field5" name="wrong3" value="{{ q.wrong1 }}">
+                </div>
+
+                <div class="button-container">
+                    <input class="button_qv3" type="submit" value ='Сохранить'>
+                    <a href="{{ url_for('view_quiz_edit') }}" class="button_qv3">Отмена</a>
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</div>
+{% endblock content2 %}

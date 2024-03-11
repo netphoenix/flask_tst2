@@ -1,0 +1,30 @@
+<style>
+    
+</style>
+
+{% extends "base.html" %}
+
+{% block main_menu %}
+    {{ super() }}
+    {% include 'quiz_menu.html' %}
+{% endblock main_menu %}
+
+{% block content2 %}
+<div class="start_form quiz_form">
+    <form action="/quiz/" method="post">
+        <div class="form1">
+            <h2>Выберите КВИЗ</h2>
+            
+            <select name="quiz" >
+                {% for q in quizes %}
+                    <option value="{{ q.id }}"> {{ q.name }}</option>
+                {% endfor%}
+            </select>
+
+            <div>
+                <input class="button" type="submit" value ='Начать КВИЗ'>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content2 %}

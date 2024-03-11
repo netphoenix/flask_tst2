@@ -1,0 +1,6 @@
+{% block main_menu %}
+    <li><a href="/">На главную</a></li>
+    {% if html_config['admin'] %}
+    <li><a href="/quizes_view/">Редактор</a></li>
+    {% endif %}
+{% endblock main_menu %}

@@ -1,0 +1,151 @@
+<style>
+    .wrapper{
+        width: 80%;
+    }
+
+    .wrapper div{
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    button{
+        height: 100%;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 0.2fr 4fr repeat(4, 1fr) 40px 35px;
+        /* grid-template-columns: */
+        align-items: stretch; /* Растягиваем элементы на всю высоту родителя */
+        font-size: 12px; /* Установка размера шрифта в пикселях */
+    }
+
+    .grid-container-quiz {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr 40px 35px;
+        /* grid-template-columns: */
+        align-items: stretch; /* Растягиваем элементы на всю высоту родителя */
+        font-size: 12px; /* Установка размера шрифта в пикселях */
+    }
+
+    /* .grid-item {
+        border: 1px solid #ccc;
+        text-align: center;
+    } */
+
+</style>
+
+{% extends "base.html" %}
+
+{% block main_menu %}
+    {{ super() }}
+    {% include 'quiz_menu.html' %}
+{% endblock main_menu %}
+
+{% block content1_head %}
+        КВИЗЫ
+        <a class="button_qv3" href="#openModalQuiz">+</a>
+
+        <div id="openModalQuiz" class="modal"">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Добавление нового КВИЗА</h3>
+                        <a href="#close" title="Close" class="close">×</a>
+                    </div>
+                    <div class="modal-body">    
+                        <form action="{{ url_for('view_quiz_edit') }}" name="modal form" method="post">
+                            <fieldset>
+                                <legend>Добавьте название</legend>
+                                <input type="text" value ='QUIZ ?' name="quiz" /><br>
+                                <input type="submit" value ='Сохранить'>
+                            </fieldset>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content1_head %}
+
+{% block content1 %}
+<div class="wrapper quiz_view_form">
+    <div class="grid-container-quiz">
+
+        <div>№</div>
+        <div>Название</div>
+        <div>Сколько вопросов</div>
+        <div>E</div>
+        <div>D</div>
+
+        {%for quiz in quizes %}
+        <div>{{quiz.id}}</div>
+        <div>{{quiz.name}}</div>
+        <div>{{len(quiz.question)}}</div>
+        <div><a href="{{ url_for('quiz_edit', id=quiz.id) }}">Ред</a></div>        
+        <div><a href="{{ url_for('quiz_delete', id=quiz.id) }}">Уд</a></div>        
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock content1 %}
+
+{% block content2_head %}
+    Вопросы
+    <a class="button_qv3" href="#openModalQuestion">+</a>
+
+    <div id="openModalQuestion" class="modal"">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Добавление нового вопроса</h3>
+                    <a href="#close" title="Close" class="close">×</a>
+                </div>
+                <div class="modal-body">
+                        <form action="{{ url_for('view_quiz_edit') }}" name="modal form" method="post">
+                        <fieldset>
+                            <legend>Добавьте вопрос</legend>
+                            <input type="text" value ='Вопрос' name="question"/><br>
+                            <input type="text" value ='Ответ' name="answer"/><br>
+                            <input type="text" value ='Вариант 1' name="wrong1"/><br>
+                            <input type="text" value ='Вариант 2' name="wrong2"/><br>
+                            <input type="text" value ='Вариант 3' name="wrong3"/><br>
+                            <input type="submit" value ='Сохранить'>
+                        </fieldset>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content2_head %}
+
+{% block content2 %}
+<div class="wrapper quiz_view_form">
+    <div class="grid-container">
+
+        <div>№</div>
+        <div>Вопрос</div>
+        <div>Ответ</div>
+        <div>Вариант 1</div>
+        <div>Вариант 2</div>
+        <div>Вариант 3</div>
+        <div>E</div>
+        <div>D</div>
+
+        {%for q in questions %}
+        <div>{{q.id}}</div>
+        <div>{{q.question}}</div>
+        <div>{{q.answer}}</div>
+        <div>{{q.wrong1}}</div>
+        <div>{{q.wrong2}}</div>
+        <div>{{q.wrong3}}</div>
+        <div><a href="{{ url_for('question_edit', id=q.id) }}">Ред</a></div>
+        <div><a href="{{ url_for('question_delete', id=q.id) }}">Уд</a></div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock content2 %}

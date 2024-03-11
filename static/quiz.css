@@ -1,0 +1,217 @@
+  
+
+
+.quiz_form{
+    display: block;
+    background: linear-gradient(153deg, #e9f2f375 20%, #7531807a);
+    border-radius: 10px;   
+    border: 2px solid;
+    
+    box-shadow: 7px 10px 20px 2px #614d6f;        
+    text-align: center;
+    width: 500px;
+    min-height: 250px;
+    position: relative;
+    top: 50%;                            
+    left: 50%;
+    /* margin: -250px 0 0 -250px;  */
+    transform: translate(-50%, -80%);
+    background: linear-gradient(305deg, #e9f2f375 20%, #a371ab7a);
+    padding: 20px;
+    min-height: 170px;
+  }
+
+  .quiz_view_form{
+    display: block;
+    background: linear-gradient(153deg, #e9f2f375 20%, #7531807a);
+    border-radius: 10px;   
+    border: 2px solid;
+    
+    box-shadow: 7px 10px 20px 2px #614d6f;        
+    text-align: center;
+    /* width: 500px; */
+    /* min-height: 250px; */
+    position: relative;
+    top: 50%;                            
+    left: 50%;
+    /* margin: -250px 0 0 -250px;  */
+    transform: translate(-50%, -80%);
+    background: linear-gradient(305deg, #e9f2f375 20%, #a371ab7a);
+    padding: 20px;
+    min-height: 170px;
+  }
+
+
+select{
+    font-size: 20px; 
+    border-radius: 10px; 
+    padding: 5px;
+    margin-bottom:12px;
+    box-shadow: inset #46234e 1px 2px 6px 0px;
+    background-color: #eaddf5;
+    transition: all 250ms ease-out;
+    width: 70%;
+    text-align: center;
+}
+select:hover{
+    /*box-shadow: inset #46234e 1px 2px 6px 0px;*/
+    box-shadow: inset #d3d3d3 3px 4px 6px 0px;
+    background-color: #f3f0f5;
+    
+
+}
+
+
+.button{
+font-size: 20px; 
+border-radius: 10px; 
+padding: 10px 15px 10px 15px;
+background-color: #c785b747;
+transition: all 450ms ease-out;
+
+}
+
+.button:hover{
+box-shadow: #46234e 1px 2px 7px 1px;
+}
+
+.form1>*{
+margin: 20px;
+}
+
+  
+/*   
+  .quiz_form{
+   
+  }
+   */
+  .anwer_row {
+    
+    text-align: center;  
+    font-size: 20px;  
+    background: linear-gradient(182deg, #e9f2f375 20%, #a371ab7a);
+    margin: 5px 0px 5px 0px; 
+    border-radius: 7px;
+    border: 1px solid rgb(212, 189, 209);
+    
+  }
+  
+  .anwer_row input[type=radio] {
+    display: none;
+  }
+  
+  .anwer_row label {  
+    border-radius: 7px;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 5px 0px 5px 0px;
+    transition: all 750ms ease-out;
+  }
+  .anwer_row label:hover{
+    background-color: #4a0f7473;
+    box-shadow: #46234e 0px 3px 4px 0px;
+    transition: all 350ms ease-out;
+  }
+  .anwer_row input[type=radio]:checked + label{
+    background-color: #4a0f7473;
+  }
+  
+  
+  
+  .button{
+    margin-top: 20px;
+    font-size: 20px; 
+    border-radius: 10px; 
+    padding: 2px 15px 2px 15px;
+    background-color: #c785b747;
+    transition: all 250ms ease-out;
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 7px 20px 7px 20px;
+    color:black;
+  }
+  
+  
+  .button:hover{
+      box-shadow: #46234e 1px 2px 7px 1px;
+  }
+
+  .button_qv{
+    height: 100%;
+    font-size: 10px; 
+    border-radius: 2px; 
+    background-color: #c785b747;
+    transition: all 250ms ease-out;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 0px 20px 0px 20px;
+    color:black;
+  }
+  
+    .button_qv:hover{
+      box-shadow: #46234e 1px 2px 7px 1px;
+  }
+
+  .button_qv2 {
+    display: inline-block;
+    background-color: #c785b747; /* Цвет фона кнопки */
+    color:black; /* Цвет текста кнопки */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    text-align: center; /* Выравнивание текста по центру */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    border-radius: 5px; /* Скругление углов кнопки */
+    border: none; /* Убираем границы кнопки */
+    cursor: pointer; /* Изменяем указатель мыши при наведении на кнопку */
+    transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении на кнопку */
+}
+
+.button:hover_qv2 {
+  background-color: #b96aa647;/* Цвет фона кнопки при наведении */
+}
+
+.button_qv3 {
+  display: inline-block;
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  background-color: #c785b747; /* Цвет фона кнопки */
+  color:black; /* Цвет текста кнопки */
+  text-align: center; /* Выравнивание текста по центру */
+  text-decoration: none; /* Убираем подчеркивание ссылки */
+  border: none; /* Убираем границы кнопки */
+  border-radius: 5px; /* Скругление углов кнопки */
+  cursor: pointer; /* Изменяем указатель мыши при наведении на кнопку */
+  transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении на кнопку */
+  margin: 0 10px; /* Отступы между кнопками */
+  width: 120px; /* Ширина кнопок */
+}
+
+.button_qv3:hover {
+  background-color: #af509747; /* Цвет фона кнопки при наведении */
+}
+
+.button-container {
+  text-align: center; /* Выравниваем содержимое по центру */
+}
+
+.a_but{
+    font-size: 20px; 
+    border-radius: 10px; 
+    padding: 2px 15px 2px 15px;
+    background-color: #c785b747;
+    transition: all 250ms ease-out;
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 4px 20px 4px 20px;
+    color:black;
+  }
+
+.content{
+    text-align: center; }
+
+.info{
+    text-align: center;
+}
+
+.base-info{
+    text-align: left;
+}
