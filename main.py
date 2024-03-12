@@ -185,4 +185,6 @@ def page_not_found(e):
     return render_template('page404.html', title="Страница не найдена")
     
 #app.run(debug=True)
-app.run()
+if __name__ == "__main__":
+    #app.run(debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=True)
